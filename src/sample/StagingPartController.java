@@ -9,12 +9,17 @@ package sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.Optional;
 
 /**
@@ -146,7 +151,7 @@ public class StagingPartController {
      * @param event : Action event input for the javafx
      */
     @FXML
-    public void ProceedAction(ActionEvent event){
+    public void ProceedAction(ActionEvent event) throws IOException {
 
         if(displayManager.isAllPiecesPlaced()){
 
@@ -157,19 +162,36 @@ public class StagingPartController {
 
             if( decision.isPresent() && decision.get() == ButtonType.OK){
 
+
                 if(isWhite){
+
+                    isWhite = false;
 
                     Alert message = new Alert(Alert.AlertType.INFORMATION , "Please give the terminal to the black player");
                     message.showAndWait();
 
                     finalWhiteBoard = placementManager.getPlacementBoardArr();
-                    isWhite = false;
                     ResetAction(event);
 
                 }
                 else{
 
-                    //TODO: prompt the gameboard with the whiteplayer as the first player
+                    Alert message = new Alert(Alert.AlertType.INFORMATION , "Please give the terminal to the white player");
+                    message.showAndWait();
+
+                    finalBlackBoard = placementManager.getPlacementBoardArr();
+
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("GameplayPart.fxml"));
+                    Stage stage = (Stage)(((Node)(event.getTarget())).getScene().getWindow());
+                    Scene scene = new Scene(loader.load());
+
+                    stage.setScene(scene);
+                    stage.setTitle("Gameplay - Game of Generals");
+                    stage.show();
+
+                    GameplayPartController gc = loader.getController();
+                    gc.InitializeBoard(finalWhiteBoard, finalBlackBoard);
+
                 }
 
             }
