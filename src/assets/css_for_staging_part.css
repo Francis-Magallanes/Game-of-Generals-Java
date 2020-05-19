@@ -1,0 +1,16 @@
+.root {
+	-fx-background-color: #FFE8C2;
+}
+
+.button {
+	-fx-effect: dropshadow( one-pass-box , grey , 8 , 0.0 , 2 , 0 );
+	-fx-color: white;
+}
+
+.button:hover {
+	-fx-background-color: #DCDCDC ;
+}
+
+.imageview{
+	-fx-box-shadow: 10px ,10px, #F3B676;
+}
