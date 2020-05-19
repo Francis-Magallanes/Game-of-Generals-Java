@@ -1,7 +1,5 @@
 package sample;
 
-import javafx.scene.image.Image;
-
 public enum PiecesHiearchy {
 
     FLAG (0 , "Flag"),
