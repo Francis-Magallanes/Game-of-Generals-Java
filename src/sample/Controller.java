@@ -21,14 +21,13 @@ public class Controller {
     @FXML
     public void StartVersusPlayer(ActionEvent event)throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("GameplayPart.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("StagingPart.fxml"));
         Stage stage = (Stage)(((Node)(event.getTarget())).getScene().getWindow());
         Scene scene = new Scene(fxmlLoader.load());
-        //scene.getStylesheets().add("assets/css_for_staging_part.css");
+        scene.getStylesheets().add("assets/css_for_staging_part.css");
 
         stage.setScene(scene);
-        //stage.setTitle("Prepare for Battle");
-        stage.setTitle("Gamplay - Game of the Generals");
+        stage.setTitle("Prepare for Battle");
         stage.show();
 
     }
