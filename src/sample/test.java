@@ -9,6 +9,9 @@ import javafx.stage.Stage;
 
 import java.util.ArrayList;
 
+/**
+ * This is a test class which runs the different classes to test the feature's functionality
+ */
 public class test extends Application {
 
     public static void main (String[] args) {

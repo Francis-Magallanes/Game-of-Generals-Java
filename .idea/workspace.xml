@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Optimized import">
-      <change beforePath="$PROJECT_DIR$/out/production/GameOfTheGenerals/assets/allpieces.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/GameplayPart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/GameplayPart.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/PiecesDisplay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/PiecesDisplay.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/PiecesHiearchy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/PiecesHiearchy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/PiecesPlacement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/PiecesPlacement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/StagingPartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/StagingPartController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/GameplayPartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/GameplayPartController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/PlayingBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/PlayingBoard.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/GameplayPart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/GameplayPart.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/GameplayPartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/GameplayPartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/PlayingBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/PlayingBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/test.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,65 +68,22 @@
     <favorites_list name="JavaFxApplication" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-              <folding>
-                <element signature="e#0#849#0" expanded="true" />
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/PlayingBoard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+            <state relative-caret-position="1598">
+              <caret line="241" selection-start-line="241" selection-end-line="241" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#PlayingBoard#0;class#PlayingBoard#0" />
+                <element signature="method#MovePieceAt#0;class#PlayingBoard#0" />
+                <element signature="method#getMovesPieceAtSelectedCell#0;class#PlayingBoard#0" />
+                <element signature="docComment;method#InitializeBoardLayout#0;class#PlayingBoard#0" />
                 <element signature="method#InitializeBoardLayout#0;class#PlayingBoard#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/PiecesPlacement.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="288" column="40" selection-start-line="288" selection-start-column="40" selection-end-line="288" selection-end-column="40" />
-              <folding>
-                <element signature="e#0#13080#0" expanded="true" />
-                <element signature="imports" expanded="true" />
-                <element signature="n#!!doc;n#selectedIndices#0;n#PiecesPlacement#0" />
-                <element signature="docComment;method#PiecesPlacement#0;class#PiecesPlacement#0" />
-                <element signature="method#PiecesPlacement#0;class#PiecesPlacement#0" />
-                <element signature="docComment;method#getIndexToPlaced#0;class#PiecesPlacement#0" />
-                <element signature="method#getIndexToPlaced#0;class#PiecesPlacement#0" />
-                <element signature="docComment;method#PlacePieceAt#0;class#PiecesPlacement#0" />
-                <element signature="method#PlacePieceAt#0;class#PiecesPlacement#0" />
-                <element signature="docComment;method#PressCell#0;class#PiecesPlacement#0" />
-                <element signature="method#PressCell#0;class#PiecesPlacement#0" />
-                <element signature="docComment;method#UnselectSelectedCell#0;class#PiecesPlacement#0" />
-                <element signature="method#UnselectSelectedCell#0;class#PiecesPlacement#0" />
-                <element signature="docComment;method#getIsThereSelectedCell#0;class#PiecesPlacement#0" />
-                <element signature="docComment;method#isTherePieceAt#0;class#PiecesPlacement#0" />
-                <element signature="docComment;method#getPieceAt#0;class#PiecesPlacement#0" />
-                <element signature="docComment;method#getPlacementBoardArr#0;class#PiecesPlacement#0" />
-                <element signature="docComment;method#toString#0;class#PiecesPlacement#0" />
-                <element signature="method#toString#0;class#PiecesPlacement#0" />
-                <element signature="docComment;method#setImageAt#0;class#PiecesPlacement#0" />
-                <element signature="method#setImageAt#0;class#PiecesPlacement#0" />
-                <element signature="docComment;method#PrepareBoard#0;class#PiecesPlacement#0" />
-                <element signature="docComment;method#getNodeFromGridPane#0;class#PiecesPlacement#0" />
-                <element signature="method#getNodeFromGridPane#0;class#PiecesPlacement#0" />
-                <element signature="docComment;method#SwitchCellsPiece#0;class#PiecesPlacement#0" />
-                <element signature="method#SwitchCellsPiece#0;class#PiecesPlacement#0" />
+                <element signature="e#2302#3167#1" />
+                <element signature="docComment;method#TransferToBoardArr#0;class#PlayingBoard#0" />
+                <element signature="method#TransferToBoardArr#0;class#PlayingBoard#0" />
               </folding>
             </state>
           </provider>
@@ -135,11 +92,49 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/GameplayPartController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="17">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="docComment;method#InitializeBoard#0;class#GameplayPartController#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/test.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#297#298#0" expanded="true" />
+                <element signature="e#325#326#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="35" selection-start-line="35" selection-end-line="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#859#860#0" expanded="true" />
+                <element signature="e#887#888#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Piece.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -151,6 +146,7 @@
       <list>
         <option value="Enum" />
         <option value="FxmlFile" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -168,16 +164,18 @@
       <list>
         <option value="$PROJECT_DIR$/src/sample/ONE_STAR_GENERAL.java" />
         <option value="$PROJECT_DIR$/src/sample/StagingPart.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/test.java" />
         <option value="$PROJECT_DIR$/src/sample/sample.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/Main.java" />
         <option value="$PROJECT_DIR$/src/sample/Piece.java" />
         <option value="$PROJECT_DIR$/src/sample/GameplayPart.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/PiecesDisplay.java" />
         <option value="$PROJECT_DIR$/src/sample/PiecesPlacement.java" />
         <option value="$PROJECT_DIR$/src/sample/PiecesHiearchy.java" />
         <option value="$PROJECT_DIR$/src/sample/StagingPartController.java" />
         <option value="$PROJECT_DIR$/src/sample/Controller.java" />
+        <option value="$PROJECT_DIR$/src/UnitTest/GameplayPartControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/UnitTest/GamePlayTest.java" />
+        <option value="$PROJECT_DIR$/src/sample/Main.java" />
+        <option value="$PROJECT_DIR$/src/sample/test.java" />
+        <option value="$PROJECT_DIR$/src/sample/PiecesDisplay.java" />
         <option value="$PROJECT_DIR$/src/sample/GameplayPartController.java" />
         <option value="$PROJECT_DIR$/src/sample/PlayingBoard.java" />
       </list>
@@ -199,8 +197,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -229,9 +225,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="GoToFile.includeJavaFiles" value="false" />
@@ -239,8 +238,14 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Documents/repo" />
     <property name="project.structure.last.edited" value="Project" />
@@ -250,6 +255,12 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="UnitTest" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="sample" />
     </key>
@@ -266,7 +277,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.test">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -281,6 +292,34 @@
     </configuration>
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GamePlayTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UnitTest.GamePlayTest" />
+      <module name="GameOfTheGenerals" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="UnitTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameplayPartControllerTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UnitTest.GameplayPartControllerTest" />
+      <module name="GameOfTheGenerals" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="UnitTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -321,6 +360,46 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GameplayPartControllerTest.ActualTestRun (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="GameOfTheGenerals" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="UnitTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="UnitTest" />
+      <option name="MAIN_CLASS_NAME" value="UnitTest.GameplayPartControllerTest" />
+      <option name="METHOD_NAME" value="ActualTestRun([Ljava.lang.String;)" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameplayPartControllerTest.ActualTestRun" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="GameOfTheGenerals" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="UnitTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="UnitTest" />
+      <option name="MAIN_CLASS_NAME" value="UnitTest.GameplayPartControllerTest" />
+      <option name="METHOD_NAME" value="ActualTestRun" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -355,6 +434,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.test" />
+        <item itemvalue="Application.GamePlayTest" />
+        <item itemvalue="Application.GameplayPartControllerTest" />
+        <item itemvalue="JUnit.GameplayPartControllerTest.ActualTestRun (1)" />
+        <item itemvalue="JUnit.GameplayPartControllerTest.ActualTestRun" />
       </list>
     </recent_temporary>
   </component>
@@ -384,8 +467,23 @@
       <option name="project" value="LOCAL" />
       <updated>1589896568867</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Adjustments for the Unit Test of Display Piece based on the inputted array">
+      <created>1589979983475</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1589979983475</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="GameplayPartControllerTest_ActualTestRun - 2020.05.20 at 18h 22m 13s.xml">
+      <configuration name="GameplayPartControllerTest.ActualTestRun" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GameplayPartControllerTest_ActualTestRun_(1) - 2020.05.20 at 18h 27m 10s.xml">
+      <configuration name="GameplayPartControllerTest.ActualTestRun (1)" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="1302000" />
@@ -402,7 +500,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1386" height="788" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.1764706" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.18099548" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -411,7 +509,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32824427" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.23053434" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32519084" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3984733" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -422,7 +520,7 @@
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" weight="0.3289689" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.3289689" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32824427" />
       <window_info anchor="bottom" id="Sequence2" order="14" />
       <window_info anchor="bottom" id="Terminal" order="15" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -437,13 +535,50 @@
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info anchor="right" id="Theme Preview" order="10" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.18099548" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Favorites" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32824427" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32519084" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3984733" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32977098" />
+      <window_info anchor="bottom" id="Application Servers" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Problems" order="9" />
+      <window_info anchor="bottom" id="Changes" order="10" />
+      <window_info anchor="bottom" id="Profiler" order="11" />
+      <window_info anchor="bottom" id="Event Log" order="12" weight="0.3289689" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32824427" />
+      <window_info anchor="bottom" id="Sequence2" order="14" />
+      <window_info anchor="bottom" id="Terminal" order="15" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="JetGradle" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="right" id="Maven" order="7" />
+      <window_info anchor="right" id="Capture Analysis" order="8" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="right" id="Theme Preview" order="10" />
+    </layout-to-restore>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <MESSAGE value="Optimized import" />
     <MESSAGE value="StagingPartController-finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="StagingPartController-finished" />
+    <MESSAGE value="Adjustments for the Unit Test of Display Piece based on the inputted array" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adjustments for the Unit Test of Display Piece based on the inputted array" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -494,30 +629,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_202/javafx-src.zip!/javafx/scene/layout/GridPane.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -537,25 +655,18 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/GameplayPart.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/StagingPart.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="153" selection-start-line="10" selection-start-column="117" selection-end-line="10" selection-end-column="153" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Piece.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -566,42 +677,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/PiecesDisplay.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-196">
-          <caret line="164" column="25" selection-start-line="164" selection-start-column="25" selection-end-line="164" selection-end-column="25" />
+        <state relative-caret-position="317">
+          <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
           <folding>
-            <element signature="e#0#12654#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="docComment;class#PiecesDisplay#0" />
-            <element signature="docComment;method#PiecesDisplay#0;class#PiecesDisplay#0" />
-            <element signature="method#PiecesDisplay#0;class#PiecesDisplay#0" />
-            <element signature="docComment;method#PressPiece#0;class#PiecesDisplay#0" />
-            <element signature="method#PressPiece#0;class#PiecesDisplay#0" />
-            <element signature="docComment;method#UnselectSelectedPiece#0;class#PiecesDisplay#0" />
-            <element signature="method#UnselectSelectedPiece#0;class#PiecesDisplay#0" />
-            <element signature="docComment;method#getIsThereSelectedPiece#0;class#PiecesDisplay#0" />
-            <element signature="docComment;method#getPieceAtSelectedIndices#0;class#PiecesDisplay#0" />
-            <element signature="method#getPieceAtSelectedIndices#0;class#PiecesDisplay#0" />
-            <element signature="docComment;method#ReturnPiece#0;class#PiecesDisplay#0" />
-            <element signature="method#ReturnPiece#0;class#PiecesDisplay#0" />
-            <element signature="docComment;method#getIndicesOfPiece#0;class#PiecesDisplay#0" />
-            <element signature="method#getIndicesOfPiece#0;class#PiecesDisplay#0" />
-            <element signature="docComment;method#isAllPiecesPlaced#0;class#PiecesDisplay#0" />
-            <element signature="method#isAllPiecesPlaced#0;class#PiecesDisplay#0" />
-            <element signature="docComment;method#PreparePieces#0;class#PiecesDisplay#0" />
-            <element signature="docComment;method#getNodeFromGridPane#0;class#PiecesDisplay#0" />
-            <element signature="method#getNodeFromGridPane#0;class#PiecesDisplay#0" />
-            <element signature="docComment;method#UpdateLabel#0;class#PiecesDisplay#0" />
-            <element signature="method#UpdateLabel#0;class#PiecesDisplay#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/StagingPartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="192" column="73" lean-forward="true" selection-start-line="191" selection-start-column="20" selection-end-line="192" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#initialize#0;class#StagingPartController#0" />
+            <element signature="method#SelectPiece#0;class#StagingPartController#0" />
+            <element signature="method#PlacementBoardAction#0;class#StagingPartController#0" />
+            <element signature="method#ResetAction#0;class#StagingPartController#0" />
+            <element signature="docComment;method#ProceedAction#0;class#StagingPartController#0" />
+            <element signature="docComment;method#initializeBoardObjects#0;class#StagingPartController#0" />
+            <element signature="method#initializeBoardObjects#0;class#StagingPartController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_202/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="1256" selection-start-line="1256" selection-end-line="1256" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UnitTest/GameplayPartControllerTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/UnitTest/GamePlayTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#859#860#0" expanded="true" />
+            <element signature="e#887#888#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/PiecesPlacement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="288" column="40" selection-start-line="288" selection-start-column="40" selection-end-line="288" selection-end-column="40" />
+        <state relative-caret-position="736">
+          <caret line="278" column="31" selection-start-line="278" selection-start-column="31" selection-end-line="278" selection-end-column="31" />
           <folding>
             <element signature="e#0#13080#0" expanded="true" />
             <element signature="imports" expanded="true" />
@@ -625,6 +761,7 @@
             <element signature="docComment;method#setImageAt#0;class#PiecesPlacement#0" />
             <element signature="method#setImageAt#0;class#PiecesPlacement#0" />
             <element signature="docComment;method#PrepareBoard#0;class#PiecesPlacement#0" />
+            <element signature="method#PrepareBoard#0;class#PiecesPlacement#0" />
             <element signature="docComment;method#getNodeFromGridPane#0;class#PiecesPlacement#0" />
             <element signature="method#getNodeFromGridPane#0;class#PiecesPlacement#0" />
             <element signature="docComment;method#SwitchCellsPiece#0;class#PiecesPlacement#0" />
@@ -633,52 +770,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/StagingPartController.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="153" column="68" selection-start-line="153" selection-start-column="68" selection-end-line="153" selection-end-column="68" />
+        <state>
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#initialize#0;class#StagingPartController#0" />
-            <element signature="method#SelectPiece#0;class#StagingPartController#0" />
-            <element signature="method#PlacementBoardAction#0;class#StagingPartController#0" />
-            <element signature="method#ResetAction#0;class#StagingPartController#0" />
-            <element signature="docComment;method#ProceedAction#0;class#StagingPartController#0" />
-            <element signature="method#ProceedAction#0;class#StagingPartController#0" />
-            <element signature="docComment;method#initializeBoardObjects#0;class#StagingPartController#0" />
-            <element signature="method#initializeBoardObjects#0;class#StagingPartController#0" />
+            <element signature="e#297#298#0" expanded="true" />
+            <element signature="e#325#326#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/Piece.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="68">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/PiecesDisplay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-314">
+          <caret line="47" column="18" lean-forward="true" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
           <folding>
-            <element signature="e#0#849#0" expanded="true" />
+            <element signature="e#0#12654#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="docComment;class#PiecesDisplay#0" />
+            <element signature="docComment;method#PiecesDisplay#0;class#PiecesDisplay#0" />
+            <element signature="method#PiecesDisplay#0;class#PiecesDisplay#0" />
+            <element signature="docComment;method#PressPiece#0;class#PiecesDisplay#0" />
+            <element signature="method#PressPiece#0;class#PiecesDisplay#0" />
+            <element signature="docComment;method#UnselectSelectedPiece#0;class#PiecesDisplay#0" />
+            <element signature="method#UnselectSelectedPiece#0;class#PiecesDisplay#0" />
+            <element signature="docComment;method#getIsThereSelectedPiece#0;class#PiecesDisplay#0" />
+            <element signature="docComment;method#getPieceAtSelectedIndices#0;class#PiecesDisplay#0" />
+            <element signature="method#getPieceAtSelectedIndices#0;class#PiecesDisplay#0" />
+            <element signature="docComment;method#ReturnPiece#0;class#PiecesDisplay#0" />
+            <element signature="method#ReturnPiece#0;class#PiecesDisplay#0" />
+            <element signature="docComment;method#getIndicesOfPiece#0;class#PiecesDisplay#0" />
+            <element signature="method#getIndicesOfPiece#0;class#PiecesDisplay#0" />
+            <element signature="docComment;method#isAllPiecesPlaced#0;class#PiecesDisplay#0" />
+            <element signature="method#isAllPiecesPlaced#0;class#PiecesDisplay#0" />
+            <element signature="docComment;method#PreparePieces#0;class#PiecesDisplay#0" />
+            <element signature="method#PreparePieces#0;class#PiecesDisplay#0" />
+            <element signature="docComment;method#getNodeFromGridPane#0;class#PiecesDisplay#0" />
+            <element signature="method#getNodeFromGridPane#0;class#PiecesDisplay#0" />
+            <element signature="docComment;method#UpdateLabel#0;class#PiecesDisplay#0" />
+            <element signature="method#UpdateLabel#0;class#PiecesDisplay#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/GameplayPartController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="17">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="docComment;method#InitializeBoard#0;class#GameplayPartController#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/PlayingBoard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+        <state relative-caret-position="1598">
+          <caret line="241" selection-start-line="241" selection-end-line="241" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#PlayingBoard#0;class#PlayingBoard#0" />
+            <element signature="method#MovePieceAt#0;class#PlayingBoard#0" />
+            <element signature="method#getMovesPieceAtSelectedCell#0;class#PlayingBoard#0" />
+            <element signature="docComment;method#InitializeBoardLayout#0;class#PlayingBoard#0" />
             <element signature="method#InitializeBoardLayout#0;class#PlayingBoard#0" />
+            <element signature="e#2302#3167#1" />
+            <element signature="docComment;method#TransferToBoardArr#0;class#PlayingBoard#0" />
+            <element signature="method#TransferToBoardArr#0;class#PlayingBoard#0" />
           </folding>
         </state>
       </provider>
