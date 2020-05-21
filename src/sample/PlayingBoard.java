@@ -30,6 +30,7 @@ public class PlayingBoard{
     private final String FIRSTSELECTEDCOLORCODE = "-fx-background-color: #2C1B0C ;";
     private final String SECONDSELECTEDCOLORCODE = "-fx-background-color: #BEC0C8 ;";
     private final String SHOWPOSSIBLETAKENCODE = "-fx-background-color: #F17A82;";
+
     /*
    It will store the selected indices. For selectedIndices:
    at index 0, it will pertain to the column index or the index along x-axis
@@ -61,14 +62,100 @@ public class PlayingBoard{
     }
 
 
+    /**
+     * This will set the selected indices array based on where the mouse is pressed.
+     * It will also make the visual indicator for the selecting. It includes also the
+     * showing of possible moves when a piece is selected.
+     *
+     * @param colIndex: column index of the selected cell
+     * @param rowIndex: row index of the selected cell
+     */
+    public void SelectCell(int colIndex, int rowIndex){
+
+        selectedIndices[0]= colIndex;
+        selectedIndices[1]= rowIndex;
+
+        if((colIndex+rowIndex)%2 == 0) {
+
+            boardCellLayout[rowIndex][colIndex].setStyle(FIRSTSELECTEDCOLORCODE);
+        }
+        else {
+            boardCellLayout[rowIndex][colIndex].setStyle(SECONDSELECTEDCOLORCODE);
+        }
+
+        ShowPossibleMoves();
+    }
+
+    /**
+     * This will unselect the selected cell at the selected indices. It will also
+     * set the selectedIndices to {-1,-1} , hide the possible moves and disable the select
+     * indicator in the selected cell
+     */
+    public void UnselectSelectedCell(){
+
+        HidePossibleMoves();
+
+        if((selectedIndices[0]+selectedIndices[1])%2 == 0) boardCellLayout[selectedIndices[1]][selectedIndices[0]].setStyle(FIRSTUNSELECTEDCOLORCODE);
+        else boardCellLayout[selectedIndices[1]][selectedIndices[0]].setStyle(SECONDUNSELECTEDCOLORCODE);
+
+        selectedIndices[0] = -1;
+        selectedIndices[1] = -1;
+    }
 
 
-    public void ShowPossibleMoves(int selectedColIndex, int selectedRowIndex){
+    /**
+     * This will make the selected piece move to the inputted indices
+     *
+     * @param toColIndex: the column index of the cell to which the user will put the selected piece
+     * @param toRowIndex: the row index of the cell to which the user will put the selected piece
+     */
+    public void MovePieceAt(int toColIndex, int toRowIndex){
+        //TODO: do the front end stuff of the moving also the challenging
+
+
+    }
+
+    /**
+     * this method will check if the input cell indices is a eligible move for the
+     * selected piece at the selected cell
+     *
+     * @param toColIndex : the column index of the cell to which the user will put the selected piece
+     * @param toRowIndex : the row index of the cell to which the user will put the selected piece
+     * @return
+     */
+    public boolean isEligibleMove(int toColIndex, int toRowIndex){
+
+        int[] inputIndices ={toColIndex , toRowIndex};
+
+        ArrayList<int[]> possibleMoves = getMovesPieceAt(selectedIndices[0] , selectedIndices[1]);
+
+        for(int[] moves : possibleMoves){
+
+            if(inputIndices[0] == moves[0] && inputIndices[1] == moves[1]){
+                return true;
+            }
+        }
+        return  false;
+    }
+
+    /**
+     * This will check if there is Piece object at the inputted indices
+     *
+     * @param colIndex: column index of the board at which you want to check the piece
+     * @param rowIndex: row index of the board at which you want to check the piece
+     * @return: True - if it is not null at the specified indices, False - if it is null at the specified indices
+     */
+    public boolean isTherePieceAt(int colIndex, int rowIndex){
+        return boardArr[rowIndex][colIndex] != null;
+    }
+
+    /**
+     * This will show the cells for the possible moves of the player
+     */
+    private void ShowPossibleMoves(){
         //TODO: do the front-end stuff for the showing of the possible moves
 
-        setSelectedIndicesCell(selectedColIndex, selectedRowIndex);
-
-        ArrayList<int[]> sp = getMovesPieceAtSelectedCell();
+        ArrayList<int[]> sp = getMovesPieceAt(selectedIndices[0],selectedIndices[1]);
 
         for(int[] moves : sp){
 
@@ -79,18 +166,35 @@ public class PlayingBoard{
 
     }
 
-    public void MovePieceAt(int colIndex, int rowIndex){
-        //TODO: do the front end stuff of the moving also the challenging
+    /**
+     * This will hide the cells at which the cells is highlighted because of the show
+     * possibeMoves method
+     */
+    private void HidePossibleMoves(){
+
+        ArrayList<int[]> previousPossibleMoves = getMovesPieceAt(selectedIndices[0] , selectedIndices[1]);
+
+        for(int[] moves : previousPossibleMoves){
+
+            if((moves[0]+moves[1])%2 == 0) boardCellLayout[moves[1]][moves[0]].setStyle(FIRSTUNSELECTEDCOLORCODE);
+            else boardCellLayout[moves[1]][moves[0]].setStyle(SECONDUNSELECTEDCOLORCODE);
+        }
 
     }
 
-
-
-    private ArrayList<int[]> getMovesPieceAtSelectedCell(){
+    /**
+     * This method will determine the possible moves of the selected pieces
+     *
+     * @param x: column index at which a piece is located
+     * @param y: row index at which a piece is located
+     * @return: an arraylist that contains the column and row indices at which
+     * the player can move the piece located at the inputted indices. Note that
+     * the column and row indices is in the form of array which the index 0 refers
+     * to the column index while the index 1 refers to the row index.
+     */
+    private ArrayList<int[]> getMovesPieceAt(int x , int y){
         //TODO: determine the all possible moves and return the all possible moves
         ArrayList<int []> possibleMoves = new ArrayList<>();
-        int x = selectedIndices[0];
-        int y = selectedIndices[1];
 
         if(x-1 >= 0){
             //this is for the left possible move
@@ -226,23 +330,6 @@ public class PlayingBoard{
             }
 
         }
-
-    }
-
-    /**
-     * This will set the selected indices array based on where the mouse is pressed.
-     * It will also make the visual indicator for the selecting
-     * @param colIndex: column index of the selected cell
-     * @param rowIndex: row index of the selected cell
-     */
-    private void setSelectedIndicesCell(int colIndex, int rowIndex){
-
-        selectedIndices[0]= colIndex;
-        selectedIndices[1]= rowIndex;
-
-    }
-
-    private void UnselectSelectedCell(){
 
     }
 
