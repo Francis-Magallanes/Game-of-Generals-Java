@@ -3,6 +3,7 @@ package sample;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
@@ -61,6 +62,21 @@ public class PlayingBoard{
         return null;
     }
 
+    public void PrintBoardArr(){
+
+        System.out.println();
+        for(int j = 0 ; j < 8 ; j++){
+
+            for(int i = 0 ; i < 9 ; i++){
+
+                if(boardArr[j][i] != null) System.out.print("\t - " + boardArr[j][i].getRank().getStringValue());
+                else System.out.print("\t - null" );
+            }
+            System.out.println();
+
+        }
+
+    }
 
     /**
      * This will set the selected indices array based on where the mouse is pressed.
@@ -110,8 +126,41 @@ public class PlayingBoard{
      * @param toRowIndex: the row index of the cell to which the user will put the selected piece
      */
     public void MovePieceAt(int toColIndex, int toRowIndex){
-        //TODO: do the front end stuff of the moving also the challenging
+        //TODO: do the capture the flag scenario. Also adjust the function to return boolean value to determine if there is a winner
 
+        int[] tempIndices = {selectedIndices[0] , selectedIndices[1]};
+
+        UnselectSelectedCell();
+
+        if(isTherePieceAt(toColIndex,toRowIndex)){
+            //TODO: do the storing of the eliminated pieces
+
+            Piece winner = ChallengeResult(boardArr[tempIndices[1]][tempIndices[0]] , boardArr[toRowIndex][toColIndex]);
+
+            if(winner == boardArr[tempIndices[1]][tempIndices[0]]){
+                //the currently selected piece won
+                MovePieceToEmptyCell(tempIndices[0] , tempIndices[1] , toColIndex , toRowIndex);
+            }
+            else if ( winner !=  null){
+                //the currently selected piece lose
+                boardArr[tempIndices[1]][tempIndices[0]] = null;
+                ((ImageView)(boardCellLayout[tempIndices[1]][tempIndices[0]].getChildren().get(0))).setImage(null);
+            }
+            else{
+                //the piece is of the same rank
+                boardArr[tempIndices[1]][tempIndices[0]] = null;
+                ((ImageView)(boardCellLayout[tempIndices[1]][tempIndices[0]].getChildren().get(0))).setImage(null);
+
+                boardArr[toRowIndex][toColIndex] = null;
+                ((ImageView)(boardCellLayout[toRowIndex][toColIndex].getChildren().get(0))).setImage(null);
+            }
+
+        }
+        else{
+
+           MovePieceToEmptyCell(tempIndices[0] , tempIndices[1] , toColIndex , toRowIndex);
+
+        }
 
     }
 
@@ -121,20 +170,20 @@ public class PlayingBoard{
      *
      * @param toColIndex : the column index of the cell to which the user will put the selected piece
      * @param toRowIndex : the row index of the cell to which the user will put the selected piece
-     * @return
+     * @return: true - if the input indices is eligble move based on the selected indices
      */
     public boolean isEligibleMove(int toColIndex, int toRowIndex){
 
-        int[] inputIndices ={toColIndex , toRowIndex};
+        int[] inputIndices = {toColIndex , toRowIndex};
 
         ArrayList<int[]> possibleMoves = getMovesPieceAt(selectedIndices[0] , selectedIndices[1]);
 
         for(int[] moves : possibleMoves){
-
             if(inputIndices[0] == moves[0] && inputIndices[1] == moves[1]){
                 return true;
             }
         }
+
         return  false;
     }
 
@@ -193,12 +242,10 @@ public class PlayingBoard{
      * to the column index while the index 1 refers to the row index.
      */
     private ArrayList<int[]> getMovesPieceAt(int x , int y){
-        //TODO: determine the all possible moves and return the all possible moves
         ArrayList<int []> possibleMoves = new ArrayList<>();
 
         if(x-1 >= 0){
             //this is for the left possible move
-
             if(boardArr[y][x-1] != null){
 
                 if(boardArr[y][x].isWhite() != boardArr[y][x-1].isWhite()){
@@ -270,6 +317,35 @@ public class PlayingBoard{
     }
 
     /**
+     * This method is the "arbiter" for the game. It will check which piece has the
+     * higher rank between the inputted piece. This is implementation of the challenge
+     * system.
+     *
+     * @param p1: piece to be compared
+     * @param p2: piece to compared
+     * @return: the piece with the higher rank. If both piece is of the same rank, it will return a null
+     */
+    private Piece ChallengeResult(Piece p1 , Piece p2){
+
+        if(p1.getRank() == PiecesHiearchy.PRIVATE && p2.getRank() == PiecesHiearchy.SPY){
+            return p1;
+        }
+        else if(p1.getRank() == PiecesHiearchy.SPY && p2.getRank() == PiecesHiearchy.PRIVATE){
+            return p2;
+        }
+        else if(p1.getRankValue() > p2.getRankValue()){
+            return p1;
+        }
+        else if (p1.getRankValue() > p2.getRankValue()){
+            return  p2;
+        }
+        else{
+            return null;
+        }
+
+    }
+
+    /**
      * This method will initialize the board's layout such as the imageview
      * and the vbox
      */
@@ -333,4 +409,18 @@ public class PlayingBoard{
 
     }
 
+    private void MovePieceToEmptyCell(int fromColIndex, int fromRowIndex, int toColIndex, int toRowIndex){
+
+        boardArr[toRowIndex][toColIndex] = boardArr[fromRowIndex][fromColIndex];
+        boardArr[fromRowIndex][fromColIndex] = null;
+
+        Node image1 = boardCellLayout[toRowIndex][toColIndex].getChildren().get(0);
+        Node image2 = boardCellLayout[fromRowIndex][fromColIndex].getChildren().get(0);
+
+        if(image1 instanceof ImageView && image2 instanceof ImageView){
+            ((ImageView) image1).setImage(boardArr[toRowIndex][toColIndex].getImage());
+            ((ImageView) image2).setImage(null);
+        }
+
+    }
 }

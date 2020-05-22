@@ -32,21 +32,24 @@ public class GameplayPartController {
         int[] tempIndices = selectedIndices; //this will store the current indices before it will overwrites
         selectedIndices = GetSelectedIndices(event);
 
-        if(selectedIndices[0] != -1 && selectedIndices[1] != -1 && !isThereSelectedCell && boardManager.isTherePieceAt(selectedIndices[0],selectedIndices[1])){
+        boardManager.PrintBoardArr();
 
-            boardManager.SelectCell(selectedIndices[0], selectedIndices[1]);
+        //this condition is for ensuring that the indices are positive
+        if(selectedIndices[0] != -1 && selectedIndices[1] != -1){
 
-            isThereSelectedCell = true;
-        }
-        else{
+            if(!isThereSelectedCell && boardManager.isTherePieceAt(selectedIndices[0],selectedIndices[1])){
+                //cell with the pieces in are the only cells can be selected
+                boardManager.SelectCell(selectedIndices[0], selectedIndices[1]);
+                isThereSelectedCell = true;
 
-            if(selectedIndices[0] != -1 && selectedIndices[1] != -1 && tempIndices[0] != -1 && tempIndices[1] != -1){
+            }
+            else if(isThereSelectedCell){
 
+                System.out.println("selectedindices[0]: " + selectedIndices[0] +" selectedIndices[1]: " + selectedIndices[1]);
 
-                if(tempIndices[0] == selectedIndices[0] && tempIndices[1] == selectedIndices[1]){
-                    //this is when the user re-presses the cell to the unselect the cell
+                if(tempIndices[0] == selectedIndices[0] && tempIndices[1] == selectedIndices[1] && boardManager.isTherePieceAt(tempIndices[0], tempIndices[1])){
+                    //this is when the user re-presses the same cell to the unselect the cell
                     boardManager.UnselectSelectedCell();
-
                     isThereSelectedCell = false;
 
                 }
@@ -56,23 +59,22 @@ public class GameplayPartController {
                     boardManager.SelectCell(selectedIndices[0] , selectedIndices[1]);
 
                 }
-                else{
+
+                else if(boardManager.isEligibleMove(selectedIndices[0],selectedIndices[1])){
+                    System.out.println("success");
                     //this is when the user makes the move
-                    //FIXME: fix the arayy indexout of bounds :-1
-                    if(boardManager.isEligibleMove(selectedIndices[0],selectedIndices[1])){
-                        boardManager.MovePieceAt(selectedIndices[0], selectedIndices[1]);
+                    boardManager.MovePieceAt(selectedIndices[0], selectedIndices[1]);
+                    isThereSelectedCell = false;
 
-                        System.out.println("success");
-                    }
-
-
+                }
+                else{
+                    boardManager.UnselectSelectedCell();
+                    isThereSelectedCell = false;
                 }
 
             }
 
-
         }
-
 
 
     }
