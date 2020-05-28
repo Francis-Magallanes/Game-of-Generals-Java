@@ -33,49 +33,60 @@ public class GameplayPartController {
         selectedIndices = GetSelectedIndices(event);
 
         boardManager.PrintBoardArr();
+        System.out.println("selectedIndices[0]:" + selectedIndices[0] + " selectedIndices[1]: " + selectedIndices[1]);
 
         //this condition is for ensuring that the indices are positive
         if(selectedIndices[0] != -1 && selectedIndices[1] != -1){
 
-            if(!isThereSelectedCell && boardManager.isTherePieceAt(selectedIndices[0],selectedIndices[1])){
-                //cell with the pieces in are the only cells can be selected
-                boardManager.SelectCell(selectedIndices[0], selectedIndices[1]);
-                isThereSelectedCell = true;
+            if(boardManager.isTherePieceAt(selectedIndices[0],selectedIndices[1]) && isWhite == boardManager.getPieceAt(selectedIndices[0]
+                    , selectedIndices[1]).isWhite()){
+                //this will check if the selected cell contains a piece and that piece belongs to him
+
+                if(!isThereSelectedCell){
+                    //this will make sure that the user will select an unselected piece of his own.
+                    boardManager.SelectCell(selectedIndices[0], selectedIndices[1]);
+                    isThereSelectedCell = true;
+
+                }
+                else if(isThereSelectedCell){
+                    //this conditional is responsible for the other actions if there is selected piece
+
+                    if(tempIndices[0] == selectedIndices[0] && tempIndices[1] == selectedIndices[1]){
+                        //this is when the user re-presses the same cell to the unselect the cell
+                        boardManager.UnselectSelectedCell();
+                        isThereSelectedCell = false;
+                    }
+                    else {
+                        //this is when the user presses another cell that contains one of his pieces
+                        boardManager.UnselectSelectedCell();
+                        boardManager.SelectCell(selectedIndices[0] , selectedIndices[1]);
+                    }
+
+                }
 
             }
             else if(isThereSelectedCell){
+                //this is for when the user selected a cell and there is previously selected piece
 
-                System.out.println("selectedindices[0]: " + selectedIndices[0] +" selectedIndices[1]: " + selectedIndices[1]);
-
-                if(tempIndices[0] == selectedIndices[0] && tempIndices[1] == selectedIndices[1] && boardManager.isTherePieceAt(tempIndices[0], tempIndices[1])){
-                    //this is when the user re-presses the same cell to the unselect the cell
-                    boardManager.UnselectSelectedCell();
-                    isThereSelectedCell = false;
-
-                }
-                else if (boardManager.isTherePieceAt(selectedIndices[0], selectedIndices[1])){
-                    //this is when the user presses another cell that contains one of his pieces
-                    boardManager.UnselectSelectedCell();
-                    boardManager.SelectCell(selectedIndices[0] , selectedIndices[1]);
-
-                }
-
-                else if(boardManager.isEligibleMove(selectedIndices[0],selectedIndices[1])){
-                    System.out.println("success");
-                    //this is when the user makes the move
+                if(boardManager.isEligibleMove(selectedIndices[0], selectedIndices[1])) {
+                    //this is when the user makes the move if the selected cell is a valid move
                     boardManager.MovePieceAt(selectedIndices[0], selectedIndices[1]);
                     isThereSelectedCell = false;
-
                 }
                 else{
+
+                    /*
+                    this will unselect the selected piece if the user didn't make any move on the selected
+                    piece or te user made any invalid move
+                     */
                     boardManager.UnselectSelectedCell();
                     isThereSelectedCell = false;
+
                 }
 
             }
 
         }
-
 
     }
 

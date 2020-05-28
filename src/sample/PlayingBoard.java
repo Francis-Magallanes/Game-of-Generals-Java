@@ -11,6 +11,7 @@ import javafx.scene.layout.VBox;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * This class will be for the managing of the board, both the front-end process and back-end process
@@ -39,6 +40,10 @@ public class PlayingBoard{
     */
     private int[] selectedIndices = {-1,-1};
 
+    //these will store the eliminated pieces
+    private HashMap<PiecesHiearchy , Integer> blackEliminatedPieces;
+    private HashMap<PiecesHiearchy , Integer> whiteEliminatedPieces;
+
     PlayingBoard(Piece[][] layoutWhite, Piece[][] layoutBlack, GridPane boardGridPane){
         //TODO: Initialize the front end stuff and te back end stuff
 
@@ -57,9 +62,8 @@ public class PlayingBoard{
     }
 
     public Piece getPieceAt(int colIndex, int rowIndex){
-        //TODO: get the value at the specified index and return the object found at that indices
 
-        return null;
+        return boardArr[rowIndex][colIndex];
     }
 
     public void PrintBoardArr(){
@@ -124,6 +128,7 @@ public class PlayingBoard{
      *
      * @param toColIndex: the column index of the cell to which the user will put the selected piece
      * @param toRowIndex: the row index of the cell to which the user will put the selected piece
+     *
      */
     public void MovePieceAt(int toColIndex, int toRowIndex){
         //TODO: do the capture the flag scenario. Also adjust the function to return boolean value to determine if there is a winner
@@ -133,33 +138,35 @@ public class PlayingBoard{
         UnselectSelectedCell();
 
         if(isTherePieceAt(toColIndex,toRowIndex)){
-            //TODO: do the storing of the eliminated pieces
 
             Piece winner = ChallengeResult(boardArr[tempIndices[1]][tempIndices[0]] , boardArr[toRowIndex][toColIndex]);
 
-            if(winner == boardArr[tempIndices[1]][tempIndices[0]]){
-                //the currently selected piece won
-                MovePieceToEmptyCell(tempIndices[0] , tempIndices[1] , toColIndex , toRowIndex);
-            }
-            else if ( winner !=  null){
-                //the currently selected piece lose
-                boardArr[tempIndices[1]][tempIndices[0]] = null;
-                ((ImageView)(boardCellLayout[tempIndices[1]][tempIndices[0]].getChildren().get(0))).setImage(null);
-            }
-            else{
+            if(winner == null){
                 //the piece is of the same rank
+                StoreLosePiece(boardArr[tempIndices[1]][tempIndices[0]]);
                 boardArr[tempIndices[1]][tempIndices[0]] = null;
                 ((ImageView)(boardCellLayout[tempIndices[1]][tempIndices[0]].getChildren().get(0))).setImage(null);
 
+                StoreLosePiece(boardArr[toRowIndex][toColIndex]);
                 boardArr[toRowIndex][toColIndex] = null;
                 ((ImageView)(boardCellLayout[toRowIndex][toColIndex].getChildren().get(0))).setImage(null);
+            }
+            else if (winner == boardArr[tempIndices[1]][tempIndices[0]]){
+                //the currently selected piece won
+                StoreLosePiece(boardArr[toRowIndex][toColIndex]);
+                MovePieceToEmptyCell(tempIndices[0] , tempIndices[1] , toColIndex , toRowIndex);
+            }
+            else if(winner == boardArr[toRowIndex][toColIndex]){
+                //the currently selected piece lose
+                StoreLosePiece(boardArr[tempIndices[1]][tempIndices[0]]);
+                boardArr[tempIndices[1]][tempIndices[0]] = null;
+                ((ImageView)(boardCellLayout[tempIndices[1]][tempIndices[0]].getChildren().get(0))).setImage(null);
             }
 
         }
         else{
 
            MovePieceToEmptyCell(tempIndices[0] , tempIndices[1] , toColIndex , toRowIndex);
-
         }
 
     }
@@ -196,6 +203,15 @@ public class PlayingBoard{
      */
     public boolean isTherePieceAt(int colIndex, int rowIndex){
         return boardArr[rowIndex][colIndex] != null;
+    }
+
+
+    public HashMap<PiecesHiearchy, Integer> getBlackEliminatedPieces() {
+        return blackEliminatedPieces;
+    }
+
+    public HashMap<PiecesHiearchy, Integer> getWhiteEliminatedPieces() {
+        return whiteEliminatedPieces;
     }
 
     /**
@@ -336,7 +352,7 @@ public class PlayingBoard{
         else if(p1.getRankValue() > p2.getRankValue()){
             return p1;
         }
-        else if (p1.getRankValue() > p2.getRankValue()){
+        else if (p1.getRankValue() < p2.getRankValue()){
             return  p2;
         }
         else{
@@ -409,6 +425,14 @@ public class PlayingBoard{
 
     }
 
+    /**
+     * This will move the piece to a empty cell.
+     *
+     * @param fromColIndex : column index of which the piece to be moved is located
+     * @param fromRowIndex: row index of which the piece to be moved is located
+     * @param toColIndex: column index for which the piece will be moved to
+     * @param toRowIndex: row index for which the piece will be moved to
+     */
     private void MovePieceToEmptyCell(int fromColIndex, int fromRowIndex, int toColIndex, int toRowIndex){
 
         boardArr[toRowIndex][toColIndex] = boardArr[fromRowIndex][fromColIndex];
@@ -423,4 +447,40 @@ public class PlayingBoard{
         }
 
     }
+
+    /**
+     * this will store the losing piece to the respective hashmaps
+     * @param lose: the piece that loses the challange
+     */
+    private void StoreLosePiece(Piece lose){
+
+        PiecesHiearchy rank = lose.getRank();
+
+        if(lose.isWhite()){
+
+            //this is for the white eliminated pieces
+            if(whiteEliminatedPieces.containsKey(rank)){
+                Integer num = whiteEliminatedPieces.get(rank);
+                whiteEliminatedPieces.replace(rank , ++num);
+            }
+            else{
+                whiteEliminatedPieces.put(rank , 1);
+            }
+
+        }
+        else{
+
+            //this is for the black eliminated pieces
+            if(blackEliminatedPieces.containsKey(rank)){
+                Integer num = blackEliminatedPieces.get(rank);
+                blackEliminatedPieces.replace(rank , ++num);
+            }
+            else{
+                blackEliminatedPieces.put(rank , 1);
+            }
+
+        }
+
+    }
+
 }
