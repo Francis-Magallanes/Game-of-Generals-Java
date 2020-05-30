@@ -49,7 +49,11 @@ public class PlayingBoard{
 
         this.boardGridPane = boardGridPane;
 
+        blackEliminatedPieces = new HashMap<>();
+        whiteEliminatedPieces = new HashMap<>();
+
         TransferToBoardArr(layoutWhite,layoutBlack);
+
 
         InitializeBoardLayout();
 
@@ -212,6 +216,90 @@ public class PlayingBoard{
 
     public HashMap<PiecesHiearchy, Integer> getWhiteEliminatedPieces() {
         return whiteEliminatedPieces;
+    }
+
+    /**
+     * this method will check if the inputted player wins or not
+     * @param isWhite: true - white player , false: black player
+     * @return: if the current player is a winner
+     */
+    public boolean isWinner(boolean isWhite){
+
+        if(isWhite){
+
+            if(blackEliminatedPieces.containsKey(PiecesHiearchy.FLAG)) return true;
+
+            int [] whiteFlagIndices = FindFlag(isWhite);
+
+            if(whiteFlagIndices[1] == 7){
+
+                if((whiteFlagIndices[0] - 1 >= 0)){
+
+                    if(whiteFlagIndices[0] + 1 <= 8){
+                        //this is for the middle part of the board
+
+                        return boardArr[whiteFlagIndices[1]][whiteFlagIndices[0] - 1] == null &&
+                                boardArr[whiteFlagIndices[1]][whiteFlagIndices[0] + 1] == null &&
+                                boardArr[whiteFlagIndices[1] - 1][whiteFlagIndices[0]] == null;
+
+                    }
+                    else{
+                        //this is for the right top corner of the board
+
+                        return boardArr[whiteFlagIndices[1]][whiteFlagIndices[0] - 1] == null &&
+                                boardArr[whiteFlagIndices[1] - 1][whiteFlagIndices[0]] == null;
+
+                    }
+
+                }
+                else{
+                    //this is for the left top corner corner of board
+                    return boardArr[whiteFlagIndices[1]][whiteFlagIndices[0] + 1] == null &&
+                            boardArr[whiteFlagIndices[1] - 1][whiteFlagIndices[0]] == null;
+
+                }
+
+            }
+
+        }
+        else{
+
+            if(whiteEliminatedPieces.containsKey(PiecesHiearchy.FLAG)) return true;
+
+            int [] blackFlagIndices = FindFlag(isWhite);
+
+            if(blackFlagIndices[1] == 7){
+
+                if((blackFlagIndices[0] - 1 >= 0)){
+
+                    if(blackFlagIndices[0] + 1 <= 8){
+                        //this is for the middle part of the board
+
+                        return boardArr[blackFlagIndices[1]][blackFlagIndices[0] - 1] == null &&
+                                boardArr[blackFlagIndices[1]][blackFlagIndices[0] + 1] == null &&
+                                boardArr[blackFlagIndices[1] - 1][blackFlagIndices[0]] == null;
+
+                    }
+                    else{
+                        //this is for the right top corner of the board
+                        return boardArr[blackFlagIndices[1]][blackFlagIndices[0] - 1] == null &&
+                                boardArr[blackFlagIndices[1] - 1][blackFlagIndices[0]] == null;
+
+                    }
+
+                }
+                else{
+                    //this is for the left top corner corner of board
+                    return boardArr[blackFlagIndices[1]][blackFlagIndices[0] + 1] == null &&
+                            boardArr[blackFlagIndices[1] - 1][blackFlagIndices[0]] == null;
+
+                }
+
+            }
+
+        }
+
+        return false;
     }
 
     /**
@@ -481,6 +569,34 @@ public class PlayingBoard{
 
         }
 
+    }
+
+    /**
+     * this method will identify at what indices the flag of the player located
+     *
+     * @param isWhite: true - if white player , false- if black player
+     * @return: 1-d array with size of 2 , indices[0] - column index and indices[1] - row index
+     * the array will be {-1,-1} if the flag is found
+     */
+    private int[] FindFlag(boolean isWhite){
+
+        int[] indices = {-1 , -1};
+
+        for(int j = 0 ; j ++ < 8 ;){
+
+            for(int i = 0; i < 9; i++){
+
+                if(boardArr[j][i] != null)
+                    if(boardArr[j][i].isWhite() == isWhite)
+                        if(boardArr[j][i].getRank() == PiecesHiearchy.FLAG) {
+                            indices[0] = i;
+                            indices[1] = j;
+                            return indices;
+                        }
+            }
+        }
+
+        return indices;
     }
 
 }

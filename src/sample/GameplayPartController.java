@@ -2,6 +2,7 @@ package sample;
 
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
@@ -72,6 +73,12 @@ public class GameplayPartController {
                     //this is when the user makes the move if the selected cell is a valid move
                     boardManager.MovePieceAt(selectedIndices[0], selectedIndices[1]);
                     isThereSelectedCell = false;
+
+                    //this will check if the player wins after he makes a move
+                    if(boardManager.isWinner(isWhite)){
+                         Congratulate();
+                    }
+
                 }
                 else{
 
@@ -121,6 +128,11 @@ public class GameplayPartController {
         }
 
         return selectedIndices;
+    }
+
+    private void Congratulate(){
+        Alert congratulation = new Alert(Alert.AlertType.INFORMATION , "You won have the game!");
+        congratulation.showAndWait();
     }
 
 }
