@@ -302,6 +302,42 @@ public class PlayingBoard{
         return false;
     }
 
+    public void ShowPiecesPlayer(boolean isWhite){
+        Image imageHide;
+
+        for(int j = 0 ; j < 8 ; j++){
+
+            for(int i = 0; i < 9; i++){
+
+               if(boardArr[j][i] != null){
+                   if(boardArr[j][i].isWhite() == isWhite){
+
+                       ImageView imageView = (ImageView) boardCellLayout[j][i].getChildren().get(0);
+                       imageView.setImage(boardArr[j][i].getImage());
+
+                   }
+                   else{
+
+                       if(isWhite == true){
+                           //this will hide the black player piece
+                           imageHide = new Image ("assets/BLACK_HIDE.png");
+                       }
+                       else{
+                           //this will hide the white player pieces
+                           imageHide = new Image ("assets/WHITE_HIDE.png");
+                       }
+
+                        ImageView imageView = (ImageView) boardCellLayout[j][i].getChildren().get(0);
+                        imageView.setImage(imageHide);
+
+                   }
+
+               }
+
+            }
+        }
+    }
+
     /**
      * This will show the cells for the possible moves of the player
      */
@@ -582,7 +618,7 @@ public class PlayingBoard{
 
         int[] indices = {-1 , -1};
 
-        for(int j = 0 ; j ++ < 8 ;){
+        for(int j = 0 ; j < 8 ; j++){
 
             for(int i = 0; i < 9; i++){
 

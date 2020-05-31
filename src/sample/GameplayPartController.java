@@ -1,11 +1,25 @@
 package sample;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+
+import java.util.HashMap;
 
 /**
  * This class for the controller of GameplayPart.fxml
@@ -35,6 +49,7 @@ public class GameplayPartController {
 
         boardManager.PrintBoardArr();
         System.out.println("selectedIndices[0]:" + selectedIndices[0] + " selectedIndices[1]: " + selectedIndices[1]);
+
 
         //this condition is for ensuring that the indices are positive
         if(selectedIndices[0] != -1 && selectedIndices[1] != -1){
@@ -76,8 +91,13 @@ public class GameplayPartController {
 
                     //this will check if the player wins after he makes a move
                     if(boardManager.isWinner(isWhite)){
+                        //TODO: end the game when there is a winner
                          Congratulate();
                     }
+
+                    //this will change the player and shows the pieces of the next player
+                    isWhite = !isWhite;
+                    boardManager.ShowPiecesPlayer(isWhite);
 
                 }
                 else{
@@ -97,6 +117,39 @@ public class GameplayPartController {
 
     }
 
+    @FXML
+    public void ShowEliminatedPieces(ActionEvent event){
+        HashMap<PiecesHiearchy , Integer> eliminatedPieces;
+
+        if(isWhite){
+            eliminatedPieces = boardManager.getWhiteEliminatedPieces();
+            Scene scene = new Scene(ProcessViewElimPieces(eliminatedPieces, isWhite) , 300 ,500);
+
+
+            Stage stage = new Stage();
+            stage.setTitle("Eliminated Pieces");
+            stage.setScene(scene);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.show();
+
+        }
+        else{
+            eliminatedPieces = boardManager.getBlackEliminatedPieces();
+
+            Scene scene = new Scene(ProcessViewElimPieces(eliminatedPieces, isWhite) , 300 ,500);
+
+
+            Stage stage = new Stage();
+            stage.setTitle("Eliminated Pieces");
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.setAlwaysOnTop(true);
+            stage.show();
+
+        }
+
+    }
+
     /**
      * This method is the communication to the stagingpartcontroller class
      * which is intended to pass the pieces array so that it will place the necessary
@@ -107,6 +160,7 @@ public class GameplayPartController {
         isWhite = true;
         boardManager = new PlayingBoard(whitePieceLayout,blackPieceLayout, boardGridPane);
 
+        boardManager.ShowPiecesPlayer(isWhite);
     }
 
     private int[] GetSelectedIndices(MouseEvent event){
@@ -133,6 +187,74 @@ public class GameplayPartController {
     private void Congratulate(){
         Alert congratulation = new Alert(Alert.AlertType.INFORMATION , "You won have the game!");
         congratulation.showAndWait();
+    }
+
+    private VBox ProcessViewElimPieces(HashMap<PiecesHiearchy, Integer> eliminatedPieces, boolean isWhite){
+
+        ScrollPane scrollContainer = new ScrollPane();
+        scrollContainer.setPrefSize(290 , 450);
+
+        VBox viewPieces = new VBox(20);
+        viewPieces.setAlignment(Pos.CENTER);
+        viewPieces.setPrefWidth(290);
+
+        if(eliminatedPieces.isEmpty()){
+
+            viewPieces.getChildren().addAll(new Label("There are no eliminated pieces as of now"));
+            viewPieces.setPrefSize(280 ,400);
+        }
+        else{
+
+            for(PiecesHiearchy ph : eliminatedPieces.keySet()){
+
+                VBox imageLabelContainer = new VBox();
+                imageLabelContainer.setAlignment(Pos.CENTER);
+                imageLabelContainer.setFillWidth(true);
+                imageLabelContainer.setSpacing(3);
+
+                //this will create the corresponding imageview and label
+                ImageView iv;
+                if (isWhite) {
+                    iv = new ImageView(new Image("assets/WHITE PIECES/WHITE_" + ph + ".png"));
+                } else {
+                    iv = new ImageView(new Image("assets/BLACK PIECES/BLACK_" + ph + ".png"));
+                }
+
+                Label rankLabel = new Label("Rank: " + ph.getStringValue());
+                Label numPieceElLabel = new Label ("Number of Pieces Eliminated: " + eliminatedPieces.get(ph));
+
+                //this will put the created imageview and label to the sub-vbox
+                imageLabelContainer.getChildren().add(iv);
+                imageLabelContainer.getChildren().add(rankLabel);
+                imageLabelContainer.getChildren().add(numPieceElLabel);
+
+                //this will add the sub-vbox to the main vbox
+                viewPieces.getChildren().add(imageLabelContainer);
+            }
+
+        }
+
+
+        scrollContainer.setContent(viewPieces);
+
+
+        VBox baseContainer = new VBox(20);
+        baseContainer.setAlignment(Pos.CENTER);
+        baseContainer.setPrefSize(290,490);
+
+        Button button = new Button("Close");
+        button.setOnAction(event -> {
+
+            ((Node)(event.getTarget())).getScene().getWindow().hide();// this will hide the window once the button is pressed.
+
+        });
+        button.setPrefSize(150 , 60);
+
+        baseContainer.getChildren().addAll(scrollContainer , button);
+        VBox.setMargin(button , new Insets(15,10,15,10));
+
+
+        return baseContainer;
     }
 
 }
