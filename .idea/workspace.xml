@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="prompting the message before the turning over of terminal and hiding the pieces. Also, once there is a winner it will return to the main window">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/GameplayPartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/GameplayPartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/PiecesDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/PiecesDisplay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/PiecesPlacement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/PiecesPlacement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/PlayingBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/PlayingBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/StagingPartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/StagingPartController.java" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="color of the board is adjusted">
+      <change beforePath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/GameplayPartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/GameplayPartController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/PiecesDisplay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/PiecesDisplay.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/PiecesPlacement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/PiecesPlacement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/PlayingBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/PlayingBoard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/StagingPartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/StagingPartController.class" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -626,7 +623,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591277775415</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="color of the board is adjusted">
+      <created>1591280318610</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1591280318610</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -651,7 +655,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.21709532" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -662,7 +665,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32824427" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34860885" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.34860885" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3984733" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -738,7 +741,8 @@
     <MESSAGE value="checking of winner and congratulating the winner is implemented" />
     <MESSAGE value="showing of the player's piece while hiding the opponent's pieces and also, the showing of eliminated pieces is implemented" />
     <MESSAGE value="prompting the message before the turning over of terminal and hiding the pieces. Also, once there is a winner it will return to the main window" />
-    <option name="LAST_COMMIT_MESSAGE" value="prompting the message before the turning over of terminal and hiding the pieces. Also, once there is a winner it will return to the main window" />
+    <MESSAGE value="color of the board is adjusted" />
+    <option name="LAST_COMMIT_MESSAGE" value="color of the board is adjusted" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
