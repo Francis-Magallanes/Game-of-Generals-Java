@@ -27,10 +27,10 @@ public class PlayingBoard{
 
 
     //these are for the coloring the cells and changing the cell if the cell is selected
-    private final String FIRSTUNSELECTEDCOLORCODE = "-fx-background-color: #FFFD82;";
-    private final String SECONDUNSELECTEDCOLORCODE = "-fx-background-color: #2D3047;";
-    private final String FIRSTSELECTEDCOLORCODE = "-fx-background-color: #2C1B0C ;";
-    private final String SECONDSELECTEDCOLORCODE = "-fx-background-color: #BEC0C8 ;";
+    private final String FIRSTUNSELECTEDCOLORCODE = "-fx-background-color: #CCE8F5;";
+    private final String FIRSTSELECTEDCOLORCODE = "-fx-background-color: #268EBA ;";
+    private final String SECONDUNSELECTEDCOLORCODE = "-fx-background-color: #585889;";
+    private final String SECONDSELECTEDCOLORCODE = "-fx-background-color: #CDCDDF ;";
     private final String SHOWPOSSIBLETAKENCODE = "-fx-background-color: #F17A82;";
 
     /*

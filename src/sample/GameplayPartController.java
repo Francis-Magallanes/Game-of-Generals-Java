@@ -101,11 +101,11 @@ public class GameplayPartController {
                     boardManager.HideAllPieces();
                     Alert turnover;
                     if(isWhite){
-                        turnover = new Alert(Alert.AlertType.INFORMATION,"Please hand over the terminal to the black player");
+                        turnover = new Alert(Alert.AlertType.INFORMATION,"Please give the terminal to the black player and don't press ok if you are not the black player");
                         turnover.showAndWait();
                     }
                     else{
-                        turnover = new Alert(Alert.AlertType.INFORMATION,"Please hand over the terminal to the white player");
+                        turnover = new Alert(Alert.AlertType.INFORMATION,"Please give the terminal to the white player and don't press ok if you are not the white player");
                         turnover.showAndWait();
                     }
 

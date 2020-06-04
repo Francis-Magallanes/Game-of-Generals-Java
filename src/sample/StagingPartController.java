@@ -117,7 +117,6 @@ public class StagingPartController {
 
             placementManager.PressCell(event);
 
-            System.out.println(placementManager.toString());
         }
 
     }
@@ -167,7 +166,7 @@ public class StagingPartController {
 
                     isWhite = false;
 
-                    Alert message = new Alert(Alert.AlertType.INFORMATION , "Please give the terminal to the black player");
+                    Alert message = new Alert(Alert.AlertType.INFORMATION , "Please give the terminal to the black player and don't press ok if you are not the black player");
                     message.showAndWait();
 
                     finalWhiteBoard = placementManager.getPlacementBoardArr();
@@ -176,7 +175,7 @@ public class StagingPartController {
                 }
                 else{
 
-                    Alert message = new Alert(Alert.AlertType.INFORMATION , "Please give the terminal to the white player");
+                    Alert message = new Alert(Alert.AlertType.INFORMATION , "Please give the terminal to the white player and don't press ok if you are not the white player");
                     message.showAndWait();
 
                     finalBlackBoard = placementManager.getPlacementBoardArr();

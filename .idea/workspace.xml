@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="showing of the player's piece while hiding the opponent's pieces and also, the showing of eliminated pieces is implemented">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="prompting the message before the turning over of terminal and hiding the pieces. Also, once there is a winner it will return to the main window">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/GameplayPartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/GameplayPartController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/PlayingBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/PlayingBoard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GameOfTheGenerals/sample/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/GameplayPartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/GameplayPartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/PiecesDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/PiecesDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/PiecesPlacement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/PiecesPlacement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/PlayingBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/PlayingBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/StagingPartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/StagingPartController.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,11 +69,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/GameplayPartController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="125" selection-start-line="125" selection-end-line="125" />
+            <state relative-caret-position="1139">
+              <caret line="107" column="163" selection-start-line="107" selection-start-column="163" selection-end-line="107" selection-end-column="163" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="n#!!doc;n#selectedIndices#0;n#GameplayPartController#0" />
@@ -85,30 +86,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/StagingPartController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="189" column="33" lean-forward="true" selection-start-line="183" selection-start-column="20" selection-end-line="189" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#initialize#0;class#StagingPartController#0" />
-                <element signature="method#SelectPiece#0;class#StagingPartController#0" />
-                <element signature="method#PlacementBoardAction#0;class#StagingPartController#0" />
-                <element signature="method#ResetAction#0;class#StagingPartController#0" />
-                <element signature="docComment;method#ProceedAction#0;class#StagingPartController#0" />
-                <element signature="docComment;method#initializeBoardObjects#0;class#StagingPartController#0" />
-                <element signature="method#initializeBoardObjects#0;class#StagingPartController#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/PlayingBoard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="401" column="61" selection-start-line="401" selection-start-column="61" selection-end-line="401" selection-end-column="61" />
+            <state relative-caret-position="157">
+              <caret line="32" column="85" selection-start-line="32" selection-start-column="85" selection-end-line="32" selection-end-column="85" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="n#!!doc;n#selectedIndices#0;n#PlayingBoard#0" />
@@ -155,19 +137,46 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/PiecesHiearchy.java">
+        <entry file="file://$PROJECT_DIR$/src/sample/PiecesPlacement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="258">
+              <caret line="37" column="85" lean-forward="true" selection-start-line="34" selection-start-column="3" selection-end-line="37" selection-end-column="85" />
+              <folding>
+                <element signature="e#0#13080#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="n#!!doc;n#selectedIndices#0;n#PiecesPlacement#0" />
+                <element signature="docComment;method#PiecesPlacement#0;class#PiecesPlacement#0" />
+                <element signature="method#PiecesPlacement#0;class#PiecesPlacement#0" />
+                <element signature="docComment;method#getIndexToPlaced#0;class#PiecesPlacement#0" />
+                <element signature="method#getIndexToPlaced#0;class#PiecesPlacement#0" />
+                <element signature="docComment;method#PlacePieceAt#0;class#PiecesPlacement#0" />
+                <element signature="method#PlacePieceAt#0;class#PiecesPlacement#0" />
+                <element signature="docComment;method#PressCell#0;class#PiecesPlacement#0" />
+                <element signature="method#PressCell#0;class#PiecesPlacement#0" />
+                <element signature="method#UnselectSelectedCell#0;class#PiecesPlacement#0" />
+                <element signature="docComment;method#getIsThereSelectedCell#0;class#PiecesPlacement#0" />
+                <element signature="docComment;method#isTherePieceAt#0;class#PiecesPlacement#0" />
+                <element signature="docComment;method#getPieceAt#0;class#PiecesPlacement#0" />
+                <element signature="docComment;method#getPlacementBoardArr#0;class#PiecesPlacement#0" />
+                <element signature="docComment;method#toString#0;class#PiecesPlacement#0" />
+                <element signature="method#toString#0;class#PiecesPlacement#0" />
+                <element signature="docComment;method#setImageAt#0;class#PiecesPlacement#0" />
+                <element signature="method#setImageAt#0;class#PiecesPlacement#0" />
+                <element signature="docComment;method#PrepareBoard#0;class#PiecesPlacement#0" />
+                <element signature="method#PrepareBoard#0;class#PiecesPlacement#0" />
+                <element signature="docComment;method#getNodeFromGridPane#0;class#PiecesPlacement#0" />
+                <element signature="method#getNodeFromGridPane#0;class#PiecesPlacement#0" />
+                <element signature="docComment;method#SwitchCellsPiece#0;class#PiecesPlacement#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
+            <state relative-caret-position="221">
+              <caret line="32" column="37" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -176,22 +185,54 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/test.java">
+        <entry file="file://$PROJECT_DIR$/src/sample/StagingPartController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1224">
-              <caret line="80" selection-start-line="80" selection-end-line="80" />
+            <state relative-caret-position="72">
+              <caret line="89" column="54" selection-start-line="89" selection-start-column="54" selection-end-line="89" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#initialize#0;class#StagingPartController#0" />
+                <element signature="method#SelectPiece#0;class#StagingPartController#0" />
+                <element signature="method#ResetAction#0;class#StagingPartController#0" />
+                <element signature="docComment;method#ProceedAction#0;class#StagingPartController#0" />
+                <element signature="method#ProceedAction#0;class#StagingPartController#0" />
+                <element signature="docComment;method#initializeBoardObjects#0;class#StagingPartController#0" />
+                <element signature="method#initializeBoardObjects#0;class#StagingPartController#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Piece.java">
+        <entry file="file://$PROJECT_DIR$/src/sample/PiecesDisplay.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="42" column="9" selection-start-line="38" selection-start-column="8" selection-end-line="42" selection-end-column="9" />
+            <state relative-caret-position="225">
+              <caret line="126" selection-start-line="126" selection-end-line="126" />
+              <folding>
+                <element signature="e#0#12654#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;class#PiecesDisplay#0" />
+                <element signature="docComment;method#PiecesDisplay#0;class#PiecesDisplay#0" />
+                <element signature="method#PiecesDisplay#0;class#PiecesDisplay#0" />
+                <element signature="docComment;method#PressPiece#0;class#PiecesDisplay#0" />
+                <element signature="docComment;method#UnselectSelectedPiece#0;class#PiecesDisplay#0" />
+                <element signature="method#UnselectSelectedPiece#0;class#PiecesDisplay#0" />
+                <element signature="docComment;method#getIsThereSelectedPiece#0;class#PiecesDisplay#0" />
+                <element signature="docComment;method#getPieceAtSelectedIndices#0;class#PiecesDisplay#0" />
+                <element signature="method#getPieceAtSelectedIndices#0;class#PiecesDisplay#0" />
+                <element signature="docComment;method#ReturnPiece#0;class#PiecesDisplay#0" />
+                <element signature="method#ReturnPiece#0;class#PiecesDisplay#0" />
+                <element signature="docComment;method#getIndicesOfPiece#0;class#PiecesDisplay#0" />
+                <element signature="method#getIndicesOfPiece#0;class#PiecesDisplay#0" />
+                <element signature="docComment;method#isAllPiecesPlaced#0;class#PiecesDisplay#0" />
+                <element signature="method#isAllPiecesPlaced#0;class#PiecesDisplay#0" />
+                <element signature="docComment;method#PreparePieces#0;class#PiecesDisplay#0" />
+                <element signature="method#PreparePieces#0;class#PiecesDisplay#0" />
+                <element signature="docComment;method#getNodeFromGridPane#0;class#PiecesDisplay#0" />
+                <element signature="method#getNodeFromGridPane#0;class#PiecesDisplay#0" />
+                <element signature="docComment;method#UpdateLabel#0;class#PiecesDisplay#0" />
+                <element signature="method#UpdateLabel#0;class#PiecesDisplay#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -229,22 +270,22 @@
         <option value="$PROJECT_DIR$/src/sample/sample.fxml" />
         <option value="$PROJECT_DIR$/src/sample/Piece.java" />
         <option value="$PROJECT_DIR$/src/sample/GameplayPart.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/PiecesPlacement.java" />
         <option value="$PROJECT_DIR$/src/sample/PiecesHiearchy.java" />
-        <option value="$PROJECT_DIR$/src/sample/StagingPartController.java" />
-        <option value="$PROJECT_DIR$/src/sample/Controller.java" />
         <option value="$PROJECT_DIR$/src/UnitTest/GameplayPartControllerTest.java" />
         <option value="$PROJECT_DIR$/src/UnitTest/GamePlayTest.java" />
-        <option value="$PROJECT_DIR$/src/sample/PiecesDisplay.java" />
         <option value="$PROJECT_DIR$/src/sample/Main.java" />
         <option value="$PROJECT_DIR$/src/sample/test.java" />
-        <option value="$PROJECT_DIR$/src/sample/PlayingBoard.java" />
+        <option value="$PROJECT_DIR$/src/sample/Controller.java" />
         <option value="$PROJECT_DIR$/src/sample/GameplayPartController.java" />
+        <option value="$PROJECT_DIR$/src/sample/StagingPartController.java" />
+        <option value="$PROJECT_DIR$/src/sample/PiecesPlacement.java" />
+        <option value="$PROJECT_DIR$/src/sample/PiecesDisplay.java" />
+        <option value="$PROJECT_DIR$/src/sample/PlayingBoard.java" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1386" />
@@ -271,6 +312,12 @@
               <item name="GameOfTheGenerals" type="b2602c69:ProjectViewProjectNode" />
               <item name="GameOfTheGenerals" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GameOfTheGenerals" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GameOfTheGenerals" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GameOfTheGenerals" type="b2602c69:ProjectViewProjectNode" />
@@ -333,7 +380,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.test">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -572,7 +619,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590922749784</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="prompting the message before the turning over of terminal and hiding the pieces. Also, once there is a winner it will return to the main window">
+      <created>1591277775415</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1591277775415</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -596,10 +650,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1386" height="788" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.21644042" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.21709532" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -608,7 +662,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32824427" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32519084" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34860885" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3984733" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -683,7 +737,8 @@
     <MESSAGE value="storing of eliminated pieces implemented" />
     <MESSAGE value="checking of winner and congratulating the winner is implemented" />
     <MESSAGE value="showing of the player's piece while hiding the opponent's pieces and also, the showing of eliminated pieces is implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="showing of the player's piece while hiding the opponent's pieces and also, the showing of eliminated pieces is implemented" />
+    <MESSAGE value="prompting the message before the turning over of terminal and hiding the pieces. Also, once there is a winner it will return to the main window" />
+    <option name="LAST_COMMIT_MESSAGE" value="prompting the message before the turning over of terminal and hiding the pieces. Also, once there is a winner it will return to the main window" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -785,16 +840,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_202/src.zip!/java/util/ArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="98">
@@ -804,10 +849,75 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UnitTest/GameplayPartControllerTest.java" />
     <entry file="file://$PROJECT_DIR$/src/UnitTest/GamePlayTest.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_202/javafx-src.zip!/com/sun/glass/ui/win/WinApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="128" column="24" selection-start-line="128" selection-start-column="24" selection-end-line="128" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_202/javafx-src.zip!/javafx/scene/image/Image.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="1109" column="26" selection-start-line="1109" selection-start-column="26" selection-end-line="1109" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="80" selection-start-line="80" selection-end-line="80" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Piece.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="42" column="9" selection-start-line="38" selection-start-column="8" selection-end-line="42" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/PiecesHiearchy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/StagingPartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="89" column="54" selection-start-line="89" selection-start-column="54" selection-end-line="89" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#initialize#0;class#StagingPartController#0" />
+            <element signature="method#SelectPiece#0;class#StagingPartController#0" />
+            <element signature="method#ResetAction#0;class#StagingPartController#0" />
+            <element signature="docComment;method#ProceedAction#0;class#StagingPartController#0" />
+            <element signature="method#ProceedAction#0;class#StagingPartController#0" />
+            <element signature="docComment;method#initializeBoardObjects#0;class#StagingPartController#0" />
+            <element signature="method#initializeBoardObjects#0;class#StagingPartController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/PiecesDisplay.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-314">
-          <caret line="47" column="18" lean-forward="true" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
+        <state relative-caret-position="225">
+          <caret line="126" selection-start-line="126" selection-end-line="126" />
           <folding>
             <element signature="e#0#12654#0" expanded="true" />
             <element signature="imports" expanded="true" />
@@ -815,7 +925,6 @@
             <element signature="docComment;method#PiecesDisplay#0;class#PiecesDisplay#0" />
             <element signature="method#PiecesDisplay#0;class#PiecesDisplay#0" />
             <element signature="docComment;method#PressPiece#0;class#PiecesDisplay#0" />
-            <element signature="method#PressPiece#0;class#PiecesDisplay#0" />
             <element signature="docComment;method#UnselectSelectedPiece#0;class#PiecesDisplay#0" />
             <element signature="method#UnselectSelectedPiece#0;class#PiecesDisplay#0" />
             <element signature="docComment;method#getIsThereSelectedPiece#0;class#PiecesDisplay#0" />
@@ -837,17 +946,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_202/javafx-src.zip!/com/sun/glass/ui/win/WinApplication.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/GameplayPartController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="128" column="24" selection-start-line="128" selection-start-column="24" selection-end-line="128" selection-end-column="24" />
+        <state relative-caret-position="1139">
+          <caret line="107" column="163" selection-start-line="107" selection-start-column="163" selection-end-line="107" selection-end-column="163" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="n#!!doc;n#selectedIndices#0;n#GameplayPartController#0" />
+            <element signature="method#ShowEliminatedPieces#0;class#GameplayPartController#0" />
+            <element signature="docComment;method#InitializeBoard#0;class#GameplayPartController#0" />
+            <element signature="method#GetSelectedIndices#0;class#GameplayPartController#0" />
+            <element signature="method#ProcessViewElimPieces#0;class#GameplayPartController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="32" column="37" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/PiecesPlacement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="278" column="31" selection-start-line="278" selection-start-column="31" selection-end-line="278" selection-end-column="31" />
+        <state relative-caret-position="258">
+          <caret line="37" column="85" lean-forward="true" selection-start-line="34" selection-start-column="3" selection-end-line="37" selection-end-column="85" />
           <folding>
             <element signature="e#0#13080#0" expanded="true" />
             <element signature="imports" expanded="true" />
@@ -860,7 +987,6 @@
             <element signature="method#PlacePieceAt#0;class#PiecesPlacement#0" />
             <element signature="docComment;method#PressCell#0;class#PiecesPlacement#0" />
             <element signature="method#PressCell#0;class#PiecesPlacement#0" />
-            <element signature="docComment;method#UnselectSelectedCell#0;class#PiecesPlacement#0" />
             <element signature="method#UnselectSelectedCell#0;class#PiecesPlacement#0" />
             <element signature="docComment;method#getIsThereSelectedCell#0;class#PiecesPlacement#0" />
             <element signature="docComment;method#isTherePieceAt#0;class#PiecesPlacement#0" />
@@ -879,41 +1005,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_202/javafx-src.zip!/javafx/scene/image/Image.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="1109" column="26" selection-start-line="1109" selection-start-column="26" selection-end-line="1109" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/PiecesHiearchy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="80" selection-start-line="80" selection-end-line="80" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Piece.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="42" column="9" selection-start-line="38" selection-start-column="8" selection-end-line="42" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/PlayingBoard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="401" column="61" selection-start-line="401" selection-start-column="61" selection-end-line="401" selection-end-column="61" />
+        <state relative-caret-position="157">
+          <caret line="32" column="85" selection-start-line="32" selection-start-column="85" selection-end-line="32" selection-end-column="85" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="n#!!doc;n#selectedIndices#0;n#PlayingBoard#0" />
@@ -954,48 +1049,6 @@
             <element signature="method#StoreLosePiece#0;class#PlayingBoard#0" />
             <element signature="docComment;method#FindFlag#0;class#PlayingBoard#0" />
             <element signature="method#FindFlag#0;class#PlayingBoard#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/StagingPartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="189" column="33" lean-forward="true" selection-start-line="183" selection-start-column="20" selection-end-line="189" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#initialize#0;class#StagingPartController#0" />
-            <element signature="method#SelectPiece#0;class#StagingPartController#0" />
-            <element signature="method#PlacementBoardAction#0;class#StagingPartController#0" />
-            <element signature="method#ResetAction#0;class#StagingPartController#0" />
-            <element signature="docComment;method#ProceedAction#0;class#StagingPartController#0" />
-            <element signature="docComment;method#initializeBoardObjects#0;class#StagingPartController#0" />
-            <element signature="method#initializeBoardObjects#0;class#StagingPartController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/GameplayPartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="125" selection-start-line="125" selection-end-line="125" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="n#!!doc;n#selectedIndices#0;n#GameplayPartController#0" />
-            <element signature="method#ShowEliminatedPieces#0;class#GameplayPartController#0" />
-            <element signature="docComment;method#InitializeBoard#0;class#GameplayPartController#0" />
-            <element signature="method#GetSelectedIndices#0;class#GameplayPartController#0" />
-            <element signature="method#ProcessViewElimPieces#0;class#GameplayPartController#0" />
           </folding>
         </state>
       </provider>

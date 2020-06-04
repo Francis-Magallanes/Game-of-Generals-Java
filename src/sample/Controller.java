@@ -30,7 +30,8 @@ public class Controller {
         stage.setTitle("Prepare for Battle");
         stage.show();
 
-
+        stage.setX(stage.getX() - 100);
+        stage.setY(30);
 
     }
 }

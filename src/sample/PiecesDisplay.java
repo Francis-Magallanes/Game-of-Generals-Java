@@ -97,9 +97,6 @@ public class PiecesDisplay {
                         int colIndexNode = GridPane.getColumnIndex(node);
                         int rowIndexNode = GridPane.getRowIndex(node);
 
-                        System.out.println("\nTemp Indices: " + tempIndices[0] + " , " + tempIndices[1]);
-                        System.out.println("Grid Col: " + colIndexNode + " Grid Row: " + rowIndexNode);
-
                         if(isThereSelectedPiece){
 
                             UnselectSelectedPiece();
@@ -113,8 +110,6 @@ public class PiecesDisplay {
                             node.setStyle(SELECTEDCOLORCODE);
 
                         }
-
-                        System.out.println("isThereSelectedPiece: " + isThereSelectedPiece);
 
                         if(isThereSelectedPiece){
                             selectedIndices[0] = colIndexNode;
@@ -130,7 +125,6 @@ public class PiecesDisplay {
 
         }
 
-        System.out.println("Selected Indices: " + selectedIndices[0] + " , " + selectedIndices[1]);
         return selectedIndices;
     }
 
