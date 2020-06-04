@@ -76,6 +76,7 @@ public class test extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
+        System.out.println(1%4);
         ArrayList<Piece[][]> testData = GenerateTestData();
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("GameplayPart.fxml"));

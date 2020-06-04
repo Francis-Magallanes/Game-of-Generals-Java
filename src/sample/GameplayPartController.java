@@ -3,6 +3,7 @@ package sample;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -19,6 +20,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.HashMap;
 
 /**
@@ -42,14 +44,13 @@ public class GameplayPartController {
     private int[] selectedIndices = {-1,-1};
 
     @FXML
-    public void PressCellAction(MouseEvent event){
+    public void PressCellAction(MouseEvent event) throws IOException {
 
         int[] tempIndices = selectedIndices; //this will store the current indices before it will overwrites
         selectedIndices = GetSelectedIndices(event);
 
         boardManager.PrintBoardArr();
         System.out.println("selectedIndices[0]:" + selectedIndices[0] + " selectedIndices[1]: " + selectedIndices[1]);
-
 
         //this condition is for ensuring that the indices are positive
         if(selectedIndices[0] != -1 && selectedIndices[1] != -1){
@@ -91,13 +92,37 @@ public class GameplayPartController {
 
                     //this will check if the player wins after he makes a move
                     if(boardManager.isWinner(isWhite)){
-                        //TODO: end the game when there is a winner
-                         Congratulate();
+                        boardManager.ShowAllPieces();
+                        EndGame(event);
+                         return;
+                    }
+
+                    //it will hide first the pieces and show the prompt before the turn over
+                    boardManager.HideAllPieces();
+                    Alert turnover;
+                    if(isWhite){
+                        turnover = new Alert(Alert.AlertType.INFORMATION,"Please hand over the terminal to the black player");
+                        turnover.showAndWait();
+                    }
+                    else{
+                        turnover = new Alert(Alert.AlertType.INFORMATION,"Please hand over the terminal to the white player");
+                        turnover.showAndWait();
                     }
 
                     //this will change the player and shows the pieces of the next player
                     isWhite = !isWhite;
+
+                    //rotation of board only happens at the back-end
+                    boardManager.RotateBoard();
+                    //thus, it is a need to update the front-end through this line of code
                     boardManager.ShowPiecesPlayer(isWhite);
+
+                    //this will check if the player wins before he move
+                    if(boardManager.isWinner(isWhite)){
+                        boardManager.ShowAllPieces();
+                        EndGame(event);
+                        return;
+                    }
 
                 }
                 else{
@@ -160,6 +185,11 @@ public class GameplayPartController {
         isWhite = true;
         boardManager = new PlayingBoard(whitePieceLayout,blackPieceLayout, boardGridPane);
 
+        //it will hide first the pieces and show the prompt before it start of the game
+        boardManager.HideAllPieces();
+        Alert turnover = new Alert(Alert.AlertType.INFORMATION,"Please hand over the terminal to the white player");
+        turnover.showAndWait();
+
         boardManager.ShowPiecesPlayer(isWhite);
     }
 
@@ -184,9 +214,20 @@ public class GameplayPartController {
         return selectedIndices;
     }
 
-    private void Congratulate(){
+    private void EndGame(MouseEvent event) throws IOException{
         Alert congratulation = new Alert(Alert.AlertType.INFORMATION , "You won have the game!");
         congratulation.showAndWait();
+
+        Alert info = new Alert(Alert.AlertType.INFORMATION, "The game is ended. Returning to the main window");
+        info.showAndWait();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
+        Stage stage = (Stage)(((Node)(event.getTarget())).getScene().getWindow());
+        Scene scene = new Scene(loader.load());
+
+        stage.setScene(scene);
+        stage.setTitle("Game of Generals");
+        stage.show();
     }
 
     private VBox ProcessViewElimPieces(HashMap<PiecesHiearchy, Integer> eliminatedPieces, boolean isWhite){

@@ -30,5 +30,7 @@ public class Controller {
         stage.setTitle("Prepare for Battle");
         stage.show();
 
+
+
     }
 }

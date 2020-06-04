@@ -45,7 +45,6 @@ public class PlayingBoard{
     private HashMap<PiecesHiearchy , Integer> whiteEliminatedPieces;
 
     PlayingBoard(Piece[][] layoutWhite, Piece[][] layoutBlack, GridPane boardGridPane){
-        //TODO: Initialize the front end stuff and te back end stuff
 
         this.boardGridPane = boardGridPane;
 
@@ -54,17 +53,40 @@ public class PlayingBoard{
 
         TransferToBoardArr(layoutWhite,layoutBlack);
 
-
         InitializeBoardLayout();
 
     }
 
+    /**
+     * It will rotate the boardArr for the player's conviniency
+     * @return: the updated and rotated version of the boardArr
+     */
     public Piece[][] RotateBoard(){
-        //TODO: rotate the board and return the result array
 
-        return null;
+        Piece[][] rotatedBoard = new Piece[8][9];
+
+        for(int j = 0 ; j < 8 ; j++){
+
+            for(int i = 0 ; i < 9 ; i++){
+
+                int newColIndex = 8 - i;
+                int newRowIndex = 7 - j;
+
+                rotatedBoard[newRowIndex][newColIndex] = boardArr[j][i];
+            }
+        }
+
+        boardArr = rotatedBoard;
+
+        return rotatedBoard;
     }
 
+    /**
+     * it will the piece at the inputted index
+     * @param colIndex: column index at which the user what to retrieve the piece
+     * @param rowIndex: row index at which the user what to retrive the piece
+     * @return: piece object located at the specified indices of the boardArr
+     */
     public Piece getPieceAt(int colIndex, int rowIndex){
 
         return boardArr[rowIndex][colIndex];
@@ -125,7 +147,6 @@ public class PlayingBoard{
         selectedIndices[0] = -1;
         selectedIndices[1] = -1;
     }
-
 
     /**
      * This will make the selected piece move to the inputted indices
@@ -208,7 +229,6 @@ public class PlayingBoard{
     public boolean isTherePieceAt(int colIndex, int rowIndex){
         return boardArr[rowIndex][colIndex] != null;
     }
-
 
     public HashMap<PiecesHiearchy, Integer> getBlackEliminatedPieces() {
         return blackEliminatedPieces;
@@ -302,7 +322,13 @@ public class PlayingBoard{
         return false;
     }
 
-    public void ShowPiecesPlayer(boolean isWhite){
+    /**
+     * This method will update the visuals such that the opponent's pieces will be hidden
+     * based on the current status of the boardArr variable
+     *
+     * @param isWhite: true if the current player is white. Otherwise, false
+     */
+    public void ShowPiecesPlayer(boolean isWhite ){
         Image imageHide;
 
         for(int j = 0 ; j < 8 ; j++){
@@ -318,7 +344,7 @@ public class PlayingBoard{
                    }
                    else{
 
-                       if(isWhite == true){
+                       if(isWhite){
                            //this will hide the black player piece
                            imageHide = new Image ("assets/BLACK_HIDE.png");
                        }
@@ -333,6 +359,50 @@ public class PlayingBoard{
                    }
 
                }
+               else{
+
+                   ImageView imageView = (ImageView) boardCellLayout[j][i].getChildren().get(0);
+                   imageView.setImage(null);
+
+               }
+
+            }
+        }
+    }
+
+    /**
+     * This will hide the image pieces
+     */
+    public void HideAllPieces(){
+
+        for(int j = 0 ; j < 8 ; j++){
+
+            for(int i = 0; i < 9; i++){
+
+                ImageView iv = (ImageView)boardCellLayout[j][i].getChildren().get(0);
+
+                if(iv.getImage() != null){
+                    iv.setImage(null);
+                }
+
+            }
+        }
+
+    }
+
+    public void ShowAllPieces(){
+        for(int j = 0 ; j < 8 ; j++){
+
+            for(int i = 0; i < 9; i++){
+
+                if(boardArr[j][i] != null){
+                    ImageView iv = (ImageView)boardCellLayout[j][i].getChildren().get(0);
+
+                    if(iv.getImage() != null){
+                        iv.setImage(boardArr[j][i].getImage());
+                    }
+
+                }
 
             }
         }
